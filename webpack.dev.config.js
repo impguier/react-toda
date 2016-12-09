@@ -4,15 +4,14 @@ var config = {
     devtool: 'source-map',
     entry:[
         'webpack-hot-middleware/client',
-        __dirname + '/src/entry.js'
+         './src/entry'
     ],
     output: {
-        path:path.resolve(__dirname,'dist'),
-        filename: "gcl.js",
+        path:path.join(__dirname,'dist'),
+        filename: "entry.js",
         publicPath:"/static/"
     },
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
